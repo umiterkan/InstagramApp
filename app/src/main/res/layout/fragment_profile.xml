@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.erkan.instagramapp.data.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            app:setImageUrl="@{user.imageUrl}"
+            android:id="@+id/user_image_view"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@color/purple_200"
+            app:layout_constraintBottom_toTopOf="@id/center_guildline"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:padding="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.nameSurname}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/center_guildline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/user_image_view"
+            tools:text="Umit Erkan" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/center_guildline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

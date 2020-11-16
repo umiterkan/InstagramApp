@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="myListener"
+            type="com.erkan.instagramapp.adapter.PostAdapter.PostListener" />
+
+        <variable
+            name="post"
+            type="com.erkan.instagramapp.data.model.Post" />
+
+    </data>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_margin="1dp"
+            android:onClick="@{()->myListener.onPostItemClick(post)}"
+            android:id="@+id/post_image_view"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@color/purple_200"
+            app:setImageUrl="@{post.imageUrl}" />
+
+</layout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.erkan.instagramapp.ui.home.HomeFragment"
+        android:label="Anasayfa">
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.erkan.instagramapp.ui.profile.ProfileFragment"
+        android:label="Kullanıcı">
+        <argument
+            app:nullable="true"
+            android:name="user"
+            app:argType="com.erkan.instagramapp.data.model.User" />
+    </fragment>
+</navigation>
